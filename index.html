@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts from Google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio&display=swap" rel="stylesheet">
+    <title>Happy New Year 2025</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="jquery.fireworks.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            font-family: 'Marck Script', cursive;
+            overflow: hidden;
+            position: relative;
+        }
+        #happy, #newyear {
+            text-align: center;
+            margin: 0 auto;
+            color: white;
+        }
+        #happy h2, #newyear h1 {
+            font-size: calc(2em + 2vw); /* Responsive font size */
+        }
+        #scrolling-text, #scrolling-text-2 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            height: auto;
+            color: white;
+            font-size: calc(1.5em + 1vw); /* Responsive font size */
+            font-family: 'Marck Script', cursive;
+            background: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            z-index: 1000;
+            animation: fade-in-out 19s infinite;
+        }
+        #scrolling-text {
+            left: 0;
+            align-items: flex-start;
+            text-align: left;
+        }
+        #scrolling-text-2 {
+            right: 0;
+            align-items: flex-end;
+            text-align: right;
+            animation-delay: 19s;
+        }
+        @keyframes fade-in-out {
+            0%, 100% { opacity: 0; }
+            10%, 90% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div id="happy" data-text="Happy"><h2>Happy</h2></div>
+    <div id="newyear" data-text="New Year 2025"><h1>New Year<br>2025</h1></div>
+    <div id="scrolling-text">
+        <span>Wishing You</span>
+        <span>a Prosperous and</span>
+        <span>Joyful New Year.. <br> 2025!</span>
+    </div>
+    <div id="scrolling-text-2">
+        <span>May This Year</span>
+        <span>Bring</span>
+        <span>Happiness and Success!</span>
+    </div>
+
+    <script>
+        $('body').fireworks({
+            sound: false,
+            opacity: 0.9,
+            width: '100%',
+            height: '100%'
+        });
+        
+        setTimeout(function() {
+            document.getElementById('scrolling-text').style.display = 'flex';
+            setTimeout(function() {
+                document.getElementById('scrolling-text').style.display = 'none';
+                document.getElementById('scrolling-text-2').style.display = 'flex';
+            }, 19000);
+        }, 19000);
+    </script>
+</body>
+</html>
