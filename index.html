@@ -33,16 +33,17 @@
             color: white;
         }
         #happy h2, #newyear h1 {
-            font-size: calc(2em + 2vw); /* Responsive font size */
+            font-size: calc(1.5em + 2vw); /* Responsive font size */
         }
         #scrolling-text, #scrolling-text-2 {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 50%;
+            width: 80%; /* Adjust width for smaller screens */
+            max-width: 600px; /* Limit the max width */
             height: auto;
             color: white;
-            font-size: calc(1.5em + 1vw); /* Responsive font size */
+            font-size: calc(1em + 1vw); /* Responsive font size */
             font-family: 'Marck Script', cursive;
             background: none;
             display: flex;
@@ -66,6 +67,24 @@
         @keyframes fade-in-out {
             0%, 100% { opacity: 0; }
             10%, 90% { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            #happy h2, #newyear h1 {
+                font-size: calc(1.2em + 2vw); /* Adjust for smaller screens */
+            }
+            #scrolling-text, #scrolling-text-2 {
+                font-size: calc(0.8em + 1vw); /* Adjust for smaller screens */
+                padding: 0 5%; /* Reduce padding */
+            }
+        }
+        @media (max-width: 480px) {
+            #happy h2, #newyear h1 {
+                font-size: calc(1em + 2vw); /* Further adjust for very small screens */
+            }
+            #scrolling-text, #scrolling-text-2 {
+                font-size: calc(0.6em + 1vw); /* Further adjust for very small screens */
+                padding: 0 2%; /* Further reduce padding */
+            }
         }
     </style>
 </head>
